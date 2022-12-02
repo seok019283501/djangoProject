@@ -1,3 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
 {% load embed_video_tags %}
+  <div>
+    <div>
+        <p>{{videos.title}}</p>
+        <div>
+            {% video videos.video_key  as youtube %}}
+            <iframe class="embed-responsive-item" src="{{videos.video_key}}" frameborder="0" allowfullscreen></iframe>
+            {% endvideo %}
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-{% endvideo %}
