@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Video List</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/3.2.0/css/bootstrap-theme.miin.css">
-
-</head>
-<body>
-  <header class="page-header" style="overflow: auto;">
+{% extends 'blog/base.html' %}
+{% block content %}
     <h1 style="display: inline;">Video List</h1>
     <a class="btn btn-default" href="/video/new" style="float: right;">New Video</a>
-  </header>
+
   <div class="row">
     <div class=cil-md-1>
       {% for video in video_list %}
@@ -24,5 +14,4 @@
       {% endfor %}
     </div>
   </div>
-</body>
-</html>
+{% endblock %}
