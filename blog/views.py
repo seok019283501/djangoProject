@@ -58,9 +58,12 @@ def video_new(request):
     return render(request,'blog/video_new.html')
 
 def video_detail(request, video_id):
-    videos = Video.objects.get(id=video_id)
+    videos = get_object_or_404(Video, id=video_id)
     return render(request,'blog/video_detail.html',{'videos':videos})
-
+def video_delete(request,video_id):
+    video = Video.objects.get(id=video_id)
+    video.delete()
+    return redirect('video_list')
 
 
 

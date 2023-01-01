@@ -4,7 +4,9 @@
   <div>
     <div>
         <p>{{videos.title}}</p>
+
         <div>
+            <a href="{% url 'video_delete' video_id=videos.id %}">delete</a>
             {% video videos.video_key  as youtube %}
             <iframe class="embed-responsive-item" src="{{videos.video_key}}" frameborder="0" allowfullscreen></iframe>
             {% endvideo %}
