@@ -3,14 +3,15 @@
 {% load embed_video_tags %}
   <div>
     <div>
-        <p>{{videos.title}}</p>
+        <p style="font-size: 50px">{{videos.title}}</p>
 
         <div>
-            <a href="{% url 'video_delete' video_id=videos.id %}">delete</a>
 
-            {% video videos.video_key  as youtube %}
-            <iframe class="embed-responsive-item" src="{{videos.video_key}}" frameborder="0" allowfullscreen></iframe>
+
+            {% video videos.video_key  as youtube  %}
+            <iframe class="embed-responsive-item" src="{{videos.video_key}}" frameborder="0" allowfullscreen style="width: 900px; height: 600px"></iframe>
             {% endvideo %}
+            <a href="{% url 'video_delete' video_id=videos.id %}">delete</a>
         </div>
     </div>
 </div>
